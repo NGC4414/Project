@@ -88,8 +88,6 @@ folders = glob(train_path + '/*')
 # look at an image for fun
 plt.imshow(image.load_img(np.random.choice(image_files)));
 
-"""Uploading the pretrained ResNet50 from Keras.applications"""
-
 # Data Augmentation of ImageDataGenerator
 train_gen = ImageDataGenerator(
   rotation_range= 40,
@@ -143,7 +141,6 @@ model.compile(
   optimizer='adam',
   metrics=['accuracy'])
 
-"""data augmentation"""
 
 class myCallback(tf.keras.callbacks.Callback):
   def on_epoch_end(self,epoch,logs={}):
